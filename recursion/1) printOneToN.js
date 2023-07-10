@@ -9,7 +9,7 @@ ii) second approach is by using only N
 */
 
 // I) approach
-
+// write a function to print numbers from one to n in javascript
 function oneToN(i, n) {
   if (i > n) return;
   console.log(i);
