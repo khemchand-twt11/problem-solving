@@ -7,7 +7,7 @@ Example:1
     4 and 13 = 1 divides both 
 */
 
-// approach1
+// approach1 Time Complexity O(min(a,b))
 let a = 125;
 let b = 657;
 const gcd = (a, b) => {
@@ -55,6 +55,15 @@ console.log(answer2);
 
 /*
 Otimized version
-10,16
-    
+
 */
+
+let e = 18;
+let f = 171;
+
+const gcdEuclicImproved = (a, b) => {
+  if (b === 0) return a;
+  return gcdEuclicImproved(b, a % b);
+};
+const answer3 = gcdEuclicImproved(e, f);
+console.log(answer3);
