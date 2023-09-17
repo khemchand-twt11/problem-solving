@@ -49,10 +49,3 @@ const hollowSquare = (n) => {
   }
 };
 hollowSquare(n);
-
-let arr = [10, 100, 500, 20, 35, -1, -233, 10833];
-
-arr.forEach((item) => {
-  setTimeout(() => console.log(item), item);
-});
-// 10 20 35 100 500

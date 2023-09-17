@@ -30,5 +30,14 @@ const pallindromeCheck = (n) => {
 
   return rem === copy;
 };
-const answer = pallindromeCheck(n);
-console.log(answer);
+const answer1 = pallindromeCheck(n);
+console.log(answer1);
+
+const pallindromeCheckRecursive = (n, rem = 0, copy = n) => {
+  if (n === 0) return copy === rem;
+  rem = rem * 10 + Math.floor(n % 10);
+  return pallindromeCheckRecursive(Math.floor(n / 10), rem, copy);
+};
+
+const answer2 = pallindromeCheckRecursive(n);
+console.log(answer2);
