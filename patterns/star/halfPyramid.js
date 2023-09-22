@@ -1,3 +1,11 @@
+/*
+ Given n make a half pyramid 
+*
+**
+***
+****
+*****
+*/
 let n = 5;
 
 function halfPyramid(n) {
