@@ -1,10 +1,10 @@
 /*
 
-Given N, Print Numbers from 1 to N using 
+Given N, Print Numbers from 1 to N using
 
-this question can be solved using two ways 
-i) first by talking intital values as 1 and then go from 1 to N 
-ii) second approach is by using only N 
+this question can be solved using two ways
+i) first by talking intital values as 1 and then go from 1 to N
+ii) second approach is by using only N
 
 */
 
@@ -29,7 +29,7 @@ function oneToNSecond(N) {
 oneToNSecond(5);
 
 /*
-Brekdown 
+Brekdown
 
 I)
 
@@ -45,7 +45,7 @@ function oneToNSecond(4) {
   oneToNSecond(4- 1); //3
   console.log(4);
 
-III) 
+III)
 function oneToNSecond(3) {
   if (3 < 1) return;
   oneToNSecond(3- 1); //2
@@ -68,7 +68,7 @@ function oneToNSecond(1) {
 
 VI)
 
-function oneToNSecond(0) { 
+function oneToNSecond(0) {
   if (0 < 1) return; //condition met return
   oneToNSecond(1- 1); //0
   console.log(1);
