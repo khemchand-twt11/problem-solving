@@ -25,11 +25,20 @@ function longestSubstringWithKDistinct(str, k) {
   let windowStart = 0;
   for (let windowEnd = 0; windowEnd < str.length; windowEnd++) {
     map.set(str[windowEnd], (map.get(str[windowEnd]) || 0) + 1);
-    if (map.size <= k) {
-      Math.max(maxlen, windowEnd - windowStart + 1);
+
+    while (map.size > k) {
+      map.set(str[windowStart], map.get(str[windowStart]) - 1);
+      if (map.get(str[windowStart]) === 0) {
+        map.delete(str[windowStart]);
+      }
+      windowStart++;
     }
 
-    while (map.size > k) {}
+    // No more than k distint characters
+
+    maxlen = Math.max(maxlen, windowEnd - windowStart + 1);
   }
+  return maxlen === -Infinity ? 0 : maxlen;
 }
-longestSubstringWithKDistinct("aaabcefghhi", 4);
+
+module.exports = longestSubstringWithKDistinct;
