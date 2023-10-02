@@ -21,6 +21,31 @@ This can be done if we start with the second letter:
 ['B', 'C', 'B', 'B', 'C']
 */
 
-function fruitsIntoBaskets() {}
+function fruitsIntoBaskets(arr) {
+  let windowStart = 0;
+  let maxFruits = 0;
+  let map = new Map();
+  for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+    const char = arr[windowEnd];
+    map.set(char, (map.get(char) || 0) + 1);
+
+    while (map.size > 2) {
+      const charToRemove = arr[windowStart];
+      map.set(charToRemove, map.get(charToRemove) - 1);
+      if (map.get(charToRemove) === 0) {
+        map.delete(charToRemove);
+      }
+      windowStart++;
+    }
+    if (map.size === 2)
+      maxFruits = Math.max(maxFruits, windowEnd - windowStart + 1);
+  }
+  return maxFruits;
+}
+
+/*
+Time Complexity: O(N+N);  for iterating through array and processing each element only once
+Space Complexity: O(1)
+*/
 
 module.exports = fruitsIntoBaskets;
